@@ -65,3 +65,7 @@ end
 gem "inertia_rails", "~> 3.8"
 
 gem "vite_rails", "~> 3.0"
+
+gem "tailwindcss-ruby", "~> 4.1"
+
+gem "tailwindcss-rails", "~> 4.2"
