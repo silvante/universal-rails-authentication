@@ -1,6 +1,9 @@
-<h1>Sign up</h1>
+<div class="w-full text-center space-y-2 mb-5">
+  <h2 class="text-2xl font-semibold">Sign up</h2>
+  <p class="">if you have an account, <%= link_to "sign in", sign_in_path, class: "text-blue-600" %></p>
+</div>
 
-<%= form_with(url: sign_up_path) do |form| %>
+<%= form_with(url: sign_up_path, class: "space-y-4") do |form| %>
   <% if @user.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -15,21 +18,22 @@
 
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.email_field :email, value: @user.email, required: true, autofocus: true, autocomplete: "email" %>
+    <%= form.email_field :email, value: @user.email, required: true, autofocus: true, autocomplete: "email", class: "bg-white/10 rounded-xl outline-none w-full" %>
   </div>
 
   <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.password_field :password, required: true, autocomplete: "new-password" %>
-    <div>12 characters minimum.</div>
+    <%= form.label :password, "password, 12 characters minimum",  style: "display: block" %>
+    <%= form.password_field :password, required: true, autocomplete: "new-password", class: "bg-white/10 rounded-xl outline-none w-full" %>
   </div>
 
   <div>
     <%= form.label :password_confirmation, style: "display: block" %>
-    <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password" %>
+    <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", class: "bg-white/10 rounded-xl outline-none w-full" %>
   </div>
 
+  <p class="text-center">ready</p>
+
   <div>
-    <%= form.submit "Sign up" %>
+    <%= form.submit "Sign up", class: "base_bg w-full py-2 rounded-xl font-semibold" %>
   </div>
 <% end %>

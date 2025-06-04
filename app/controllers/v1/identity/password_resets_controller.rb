@@ -1,4 +1,5 @@
 class V1::Identity::PasswordResetsController < ApplicationController
+  layout "auth"
   skip_before_action :authenticate
 
   before_action :set_user, only: %i[ edit update ]
