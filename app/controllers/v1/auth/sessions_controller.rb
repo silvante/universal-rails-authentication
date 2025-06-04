@@ -1,4 +1,5 @@
-class SessionsController < ApplicationController
+class V1::Auth::SessionsController < ApplicationController
+  layout "auth"
   skip_before_action :authenticate, only: %i[ new create ]
 
   before_action :set_session, only: :destroy

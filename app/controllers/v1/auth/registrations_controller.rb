@@ -1,4 +1,5 @@
-class RegistrationsController < ApplicationController
+class V1::Auth::RegistrationsController < ApplicationController
+  layout "auth"
   skip_before_action :authenticate
 
   def new
