@@ -1,5 +1,5 @@
 class V1::Auth::PasswordsController < ApplicationController
-  layout "auth"
+  # layout "auth"
   before_action :set_user
 
   def edit
