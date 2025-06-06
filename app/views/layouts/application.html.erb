@@ -27,12 +27,11 @@
 </head>
 
 <body class="body_style">
-  <main class="flex flex-col container mx-auto">
-    <header class="mx-auto py-5 w-full flex justify-between text-[#213547]">
-      <h1 class="font-semibold text-3xl">Logo</h1>
-      <h2 class="font-medium text-xl">Other stuff here</h2>
-    </header>
-    <%= yield %>
+  <main class="flex w-full h-screen">
+    <%= render(AsideComponent.new) %>
+      <div class="p-5">
+        <%= yield %>
+      </div>
   </main>
 </body>
 

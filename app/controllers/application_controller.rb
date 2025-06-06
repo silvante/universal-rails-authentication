@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_current_request_details
   before_action :authenticate
+  before_action :current_user
 
   private
     def authenticate
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
     def set_current_request_details
       Current.user_agent = request.user_agent
       Current.ip_address = request.ip
+    end
+
+    def current_user
+      @current_user = Current.user
     end
 end
